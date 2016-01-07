@@ -58,3 +58,9 @@ rec.addCommand(/godzina/i, function() {
     return result;
   }
 });
+rec.start(function(support) {
+  if(support) {
+    var supportEl = document.getElementById('support');
+    supportEl.hidden = true;
+  }
+});
