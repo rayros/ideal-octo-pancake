@@ -1,0 +1,15 @@
+#support {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.support-text {
+  position: fixed;
+  bottom: 20px;
+  font-size: 28px;
+  padding: 40px;
+  color: white;
+}
