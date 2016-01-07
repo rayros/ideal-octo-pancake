@@ -4,12 +4,12 @@ var speech = speech('pl-PL');
 
 rec.addCommand(/pogoda/i, function() {
   var xhReq = new XMLHttpRequest(),
-  url = 'http://api.openweathermap.org/data/2.5/find?q=Warsaw&units=metric&appid=2de143494c0b295cca9337e1e96b00e0';
+  url = "https://query.yahooapis.com/v1/public/yql?q=SELECT%20*%20FROM%20weather.bylocation%20WHERE%20location%3D'Warsaw'%20AND%20unit%3D%22c%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
   xhReq.open("GET", url);
   xhReq.send();
   xhReq.onload = function(response) {
-    var json = JSON.parse(xhReq.responseText);
-    var temp = json.list[0].main.temp;
+    var json = JSON.parse(xhReq.responseText),
+        temp = json.query.results.weather.rss.channel.item.condition.temp;
     speech('Jest teraz ' + temp + ' stopni');
   };
 });
