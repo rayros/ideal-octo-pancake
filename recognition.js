@@ -27,7 +27,7 @@ function Recognition() {
     }
   };
   rec.onend = function() {
-      setTimeout(rec.start, 1000);
+      setTimeout(function() {rec.start();}, 1000);
   };
   rec.start();
 }
