@@ -5,6 +5,9 @@ function Recognition() {
   rec.continuous = true;
   rec.interimResults = false;
   rec.lang = 'pl-PL';
+  rec.onstart = function() {
+    console.log('rec start');
+  };
   rec.onresult = function(event) {
     var msg, match, newEvent;
     function testCommand(command){
@@ -23,7 +26,9 @@ function Recognition() {
       }
     }
   };
-  rec.onend = rec.start;
+  rec.onend = function() {
+      setTimeout(rec.start, 1000);
+  };
   rec.start();
 }
 Recognition.prototype.addCommand = function(regexp, fn) {
