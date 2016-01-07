@@ -29,7 +29,12 @@ function Recognition() {
   rec.onend = function() {
       setTimeout(function() {rec.start();}, 1000);
   };
-  rec.start();
+  navigator.webkitGetUserMedia({audio: true}, function() {
+    rec.start();
+  }, function() {
+    console.log('no mic access');
+    debugger;
+  });
 }
 Recognition.prototype.addCommand = function(regexp, fn) {
   var newEvent = new CustomEvent('newCommand', { detail: regexp });
