@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    ghPages = require('gulp-gh-pages');
 gulp.task('default', function() {
   // Static server
   browserSync.init({
@@ -8,4 +9,8 @@ gulp.task('default', function() {
       }
   });
   gulp.watch(['./**/*'], browserSync.reload);
+});
+gulp.task('deploy', function() {
+  return gulp.src('./**/*')
+    .pipe(ghPages());
 });
