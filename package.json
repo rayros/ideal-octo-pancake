@@ -1,0 +1,27 @@
+{
+  "name": "ideal-octo-pancake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayros/ideal-octo-pancake.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rayros/ideal-octo-pancake/issues"
+  },
+  "homepage": "https://github.com/rayros/ideal-octo-pancake#readme",
+  "devDependencies": {
+    "browser-sync": "^2.10.1",
+    "gulp": "^3.9.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-jshint": "^2.0.0",
+    "gulp-minify": "0.0.5",
+    "jshint": "^2.8.0"
+  }
+}

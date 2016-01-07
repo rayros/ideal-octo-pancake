@@ -1,0 +1,23 @@
+#log {
+  height: 400px;
+  overflow-y: scroll;
+  border: lightgray 1px solid;
+}
+.log--recognize {
+  color: #F5A724;
+}
+.log--recognize::before {
+  content: 'recognize: ';
+}
+.log--command {
+  color: #1CC027;
+}
+.log--command::before {
+  content: 'command: ';
+}
+.log--speech {
+  color: #2459A1;
+}
+.log--speech::before {
+  content: 'speech: '
+}
