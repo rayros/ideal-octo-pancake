@@ -1,7 +1,6 @@
 "use strict";
-var rec = new Recognition();
-var speech = speech('pl-PL');
-
+var rec = new Recognition(),
+    speech = speech('pl-PL');
 rec.addCommand(/pogoda/i, function() {
   var xhReq = new XMLHttpRequest(),
   url = "https://query.yahooapis.com/v1/public/yql?q=SELECT%20*%20FROM%20weather.bylocation%20WHERE%20location%3D'Warsaw'%20AND%20unit%3D%22c%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
@@ -10,7 +9,7 @@ rec.addCommand(/pogoda/i, function() {
   xhReq.onload = function(response) {
     var json = JSON.parse(xhReq.responseText),
         temp = json.query.results.weather.rss.channel.item.condition.temp;
-    speech('Jest teraz ' + temp + ' stopni');
+    speech('Jest teraz ' + temp);
   };
 });
 rec.addCommand(/szukaj(.*)/i, function(match){
