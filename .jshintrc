@@ -5,6 +5,7 @@
   "globals": {
     "webkitSpeechRecognition": true,
     "SpeechSynthesisUtterance": true,
+    "require": true,
     "Recognition": true
   }
 }
