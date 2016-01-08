@@ -1,3 +1,4 @@
+"use strict";
 var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     ghPages = require('gulp-gh-pages');
@@ -8,7 +9,7 @@ gulp.task('default', function() {
           baseDir: "./"
       }
   });
-  gulp.watch(['./**/*'], browserSync.reload);
+  gulp.watch(['./*.js', './*.html', './*.css'], browserSync.reload);
 });
 gulp.task('deploy', function() {
   return gulp.src('./**/*')

@@ -1,12 +1,6 @@
 "use strict";
-// SpeechRecognition polyfill
-var SpeechRecognition = window.SpeechRecognition ||
-                        window.webkitSpeechRecognition ||
-                        window.mozSpeechRecognition ||
-                        window.msSpeechRecognition ||
-                        window.oSpeechRecognition;
 function Recognition() {
-  var rec = this.recognition = new SpeechRecognition(),
+  var rec = this.recognition = new webkitSpeechRecognition(),
       commands = this.commands = [];
   rec.continuous = true;
   rec.interimResults = false;
@@ -36,7 +30,7 @@ function Recognition() {
     commands.forEach(testCommand);
   };
   rec.onend = function() {
-    rec.start();
+    setTimeout(rec.start.bind(this), 1000);
   };
 
 }
