@@ -34,10 +34,10 @@ rec.addCommand(/godzina/i, function() {
   }
   function hours(h) {
     var hoursArray = ["północ", "pierwsza", "druga", "trzecia", "czwarta", "piąta", "szósta", "siódma", "ósma", "dziewiąta",
-                "dziesiąta", "jedenasta", "trzynasta", "czternasta", "pietnasta", "szesnasta", "siedemnasta",
+                "dziesiąta", "jedenasta", "dwunasta", "trzynasta", "czternasta", "pietnasta", "szesnasta", "siedemnasta",
                 "osiemnasta", "dziewietnasta", "dwudziesta", "dwudziestapierwsza", "dwudziestadruga",
-                "dwudziestatrzecia", "dwudziestaczwarta"];
-    return hoursArray[h-1];
+                "dwudziestatrzecia"];
+    return hoursArray[h];
   }
   function minutes(num) {
     var lowNames = ["", "jeden", "dwa", "trzy",
