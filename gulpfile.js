@@ -12,6 +12,6 @@ gulp.task('default', function() {
   gulp.watch(['./*.js', './*.html', './*.css'], browserSync.reload);
 });
 gulp.task('deploy', function() {
-  return gulp.src('./**/*')
+  return gulp.src('./*')
     .pipe(ghPages());
 });
